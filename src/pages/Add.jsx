@@ -25,21 +25,6 @@ function AddPage() {
     }));
   }
 
-  function handleFileChange(e) {
-    const file = e.target.files && e.target.files[0];
-    if (!file) return;
-    // limit to 5MB for safety
-    if (file.size > 5 * 1024 * 1024) {
-      toast.error("Ảnh quá lớn (tối đa 5MB)");
-      return;
-    }
-    const reader = new FileReader();
-    reader.onload = () => {
-      setForm((s) => ({ ...s, image: reader.result }));
-    };
-    reader.readAsDataURL(file);
-  }
-
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -125,56 +110,14 @@ function AddPage() {
         </div>
 
         <div>
-          <label className="block font-medium mb-2">Ảnh (URL hoặc upload từ máy)</label>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* URL Input */}
-            <div>
-              <p className="text-xs text-gray-500 mb-1">Dán URL ảnh:</p>
-              <input
-                name="image"
-                value={form.image}
-                onChange={handleChange}
-                className="w-full border rounded-lg px-3 py-2"
-                placeholder="https://picsum.photos/400/300?random=3"
-              />
-            </div>
-
-            {/* File Upload */}
-            <div>
-              <p className="text-xs text-gray-500 mb-1">Hoặc chọn từ máy:</p>
-              <div className="relative">
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                  className="hidden"
-                  id="fileInput"
-                />
-                <label
-                  htmlFor="fileInput"
-                  className="block w-full border-2 border-dashed border-blue-300 rounded-lg px-4 py-3 text-center cursor-pointer hover:bg-blue-50 hover:border-blue-500 transition"
-                >
-                  <svg className="w-6 h-6 mx-auto text-blue-600 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
-                  <p className="text-blue-600 font-medium text-sm">Chọn ảnh</p>
-                  <p className="text-xs text-gray-500">hoặc kéo thả vào</p>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          {form.image && (
-            <div className="mt-4">
-              <p className="text-sm font-medium text-gray-700 mb-2">Preview ảnh:</p>
-              <img src={form.image} alt="preview" className="w-full md:w-80 h-48 object-cover rounded-lg shadow" />
-            </div>
-          )}
-          {!form.image && (
-            <div className="mt-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
-              <p className="text-sm text-gray-500">Chưa chọn ảnh — vui lòng dán URL hoặc upload từ máy</p>
-            </div>
-          )}
+          <label className="block font-medium mb-1">Ảnh (URL)</label>
+          <input
+            name="image"
+            value={form.image}
+            onChange={handleChange}
+            className="w-full border rounded-lg px-3 py-2"
+            placeholder="https://picsum.photos/400/300?random=3"
+          />
         </div>
 
         <div>
