@@ -1,9 +1,9 @@
 import { Toaster } from "react-hot-toast";
 import { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import List from "./pages/List";
-import Add from "./pages/Add";
-import Edit from "./pages/Edit";
+import ListPage from "./pages/List";
+import AddPage from "./pages/Add";
+import EditPage from "./pages/Edit";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -106,9 +106,9 @@ function App() {
               </div>
             }
           />
-          <Route path="/list" element={<List />} />
-          <Route path="/add" element={<Add />} />
-          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/list" element={<ListPage />} />
+          <Route path="/add" element={<AddPage />} />
+          <Route path="/edit/:id" element={<EditPage />} />
         </Routes>
       </div>
 
