@@ -42,5 +42,22 @@
       "active": true,
       "id": 4
     }
+  ],
+  "users": [
+    {
+      "email": "hoanghieu203@gmail.com",
+      "password": "$2a$10$zZrrWJTUWlIiNUTTeM1R9uyQcKYFRqLSQY1ygM.kU.W3NdFf2Q8ne",
+      "id": 1
+    },
+    {
+      "email": "hoanghieu206@gmail.com",
+      "password": "$2a$10$zbFvRZoR9E4QVNn0QRGcUeCtO28WvCpREHFLa0oWWfIcdHerbVOb6",
+      "id": 2
+    },
+    {
+      "email": "hoangxuanhieu203@gmail.com",
+      "password": "$2a$10$i/Uw.fHbsFB6McSurN9KluRFVZEQCzgRC/tzxgAhmH9wwRQ8bfAay",
+      "id": 3
+    }
   ]
 }

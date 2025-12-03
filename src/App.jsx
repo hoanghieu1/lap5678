@@ -4,6 +4,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import ListPage from "./pages/List";
 import AddPage from "./pages/Add";
 import EditPage from "./pages/Edit";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -83,10 +85,10 @@ function App() {
               <Link to="/add" className="block hover:text-gray-200">
                 Thêm mới
               </Link>
-              <a href="#" className="block hover:text-gray-200">
+              <a href="/login" className="block hover:text-gray-200">
                 Đăng nhập
               </a>
-              <a href="#" className="block hover:text-gray-200">
+              <a href="/register" className="block hover:text-gray-200">
                 Đăng ký
               </a>
             </div>
@@ -109,6 +111,9 @@ function App() {
           <Route path="/list" element={<ListPage />} />
           <Route path="/add" element={<AddPage />} />
           <Route path="/edit/:id" element={<EditPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          
         </Routes>
       </div>
 

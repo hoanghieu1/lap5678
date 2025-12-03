@@ -15,7 +15,6 @@ function Layout() {
               Trang chủ
             </Link>
 
-            {/* Mobile button */}
             <button
               className="md:hidden block text-gray-200 hover:text-white"
               onClick={() => setOpen(!open)}
